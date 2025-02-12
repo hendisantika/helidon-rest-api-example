@@ -1,5 +1,6 @@
 package id.my.hendisantika.helidonrestapiexample.dto;
 
+import id.my.hendisantika.helidonrestapiexample.model.Alumni;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Past;
@@ -25,8 +26,8 @@ public record AlumniPayload(
         @Schema @NotNull @Past LocalDate birthday
 ) {
     public void enrich (Alumni alumni){
-        alumni.setNombre(firstName);
-        alumni.setApellidos(lastName);
+        alumni.setNumber(firstName);
+        alumni.setA(lastName);
         alumni.setFechaNacimiento(birthday);
     }
 }
