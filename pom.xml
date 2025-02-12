@@ -23,12 +23,64 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.26</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.microprofile.openapi</groupId>
+            <artifactId>microprofile-openapi-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.0.33</version>
+        </dependency>
+        <dependency>
+            <groupId>io.helidon.microprofile.openapi</groupId>
+            <artifactId>helidon-microprofile-openapi</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
             <groupId>io.helidon.microprofile.bundles</groupId>
             <artifactId>helidon-microprofile-core</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.helidon.common</groupId>
-            <artifactId>helidon-common</artifactId>
+            <groupId>org.eclipse.microprofile.metrics</groupId>
+            <artifactId>microprofile-metrics-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.helidon.microprofile.metrics</groupId>
+            <artifactId>helidon-microprofile-metrics</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.helidon.microprofile.health</groupId>
+            <artifactId>helidon-microprofile-health</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.json.bind</groupId>
+            <artifactId>jakarta.json.bind-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.media</groupId>
+            <artifactId>jersey-media-json-binding</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.helidon.integrations.cdi</groupId>
+            <artifactId>helidon-integrations-cdi-hibernate</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.helidon.integrations.cdi</groupId>
+            <artifactId>helidon-integrations-cdi-datasource-hikaricp</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>jakarta.annotation</groupId>
@@ -47,12 +99,44 @@
             <artifactId>jakarta.ws.rs-api</artifactId>
         </dependency>
         <dependency>
-            <groupId>jakarta.json.bind</groupId>
-            <artifactId>jakarta.json.bind-api</artifactId>
+            <groupId>jakarta.persistence</groupId>
+            <artifactId>jakarta.persistence-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.transaction</groupId>
+            <artifactId>jakarta.transaction-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.helidon.common</groupId>
+            <artifactId>helidon-common</artifactId>
         </dependency>
         <dependency>
             <groupId>jakarta.xml.bind</groupId>
             <artifactId>jakarta.xml.bind-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.helidon.integrations.cdi</groupId>
+            <artifactId>helidon-integrations-cdi-jta-weld</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.helidon.integrations.cdi</groupId>
+            <artifactId>helidon-integrations-cdi-jpa</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>jakarta.el</artifactId>
+            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>org.jboss</groupId>
@@ -60,29 +144,23 @@
             <scope>runtime</scope>
         </dependency>
         <dependency>
-            <groupId>org.glassfish.jersey.media</groupId>
-            <artifactId>jersey-media-json-binding</artifactId>
+            <groupId>jakarta.activation</groupId>
+            <artifactId>jakarta.activation-api</artifactId>
             <scope>runtime</scope>
         </dependency>
-
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
+            <groupId>io.helidon.microprofile.tests</groupId>
+            <artifactId>helidon-microprofile-tests-junit5</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-all</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.helidon.microprofile.tests</groupId>
-            <artifactId>helidon-microprofile-tests-junit5</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
