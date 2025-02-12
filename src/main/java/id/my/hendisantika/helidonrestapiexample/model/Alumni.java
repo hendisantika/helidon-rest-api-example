@@ -33,8 +33,8 @@ public class Alumni {
     @Column(name = "number")
     private String number;
 
-    @Column(name = "first_name")
-    private String firstName;
+    @Column(name = "full_name")
+    private String fullName;
 
     @Column(name = "birth_date")
     private LocalDate birthDate;

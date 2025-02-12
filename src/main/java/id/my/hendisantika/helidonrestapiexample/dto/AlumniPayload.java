@@ -21,13 +21,13 @@ import java.time.LocalDate;
  * To change this template use File | Settings | File Templates.
  */
 public record AlumniPayload(
-        @Schema @NotNull @NotBlank @Getter String firstName,
-        @Schema @NotNull @NotBlank String lastName,
+        @Schema @NotNull @NotBlank @Getter String fullName,
+        @Schema @NotNull @NotBlank String number,
         @Schema @NotNull @Past LocalDate birthday
 ) {
     public void enrich (Alumni alumni){
-        alumni.setNumber(firstName);
-        alumni.setA(lastName);
-        alumni.setFechaNacimiento(birthday);
+        alumni.setNumber(fullName);
+        alumni.setFullName(number);
+        alumni.setBirthDate(birthday);
     }
 }
