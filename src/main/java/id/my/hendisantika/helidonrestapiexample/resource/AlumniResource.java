@@ -7,6 +7,7 @@ import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
@@ -60,6 +61,14 @@ public class AlumniResource {
         return this.alumniService.get(id)
                 .map((alu) -> Response.ok(alu).build())
                 .orElse(Response.status(Response.Status.NOT_FOUND).build());
+    }
+
+    @DELETE
+    @Path("/{id}")
+    @Transactional
+    public Response delete(@PathParam(value = "id") Integer id) {
+        this.alumniService.get(id).ifPresent(alu -> this.alumniService.delete(alu));
+        return Response.noContent().build();
     }
 
 }
