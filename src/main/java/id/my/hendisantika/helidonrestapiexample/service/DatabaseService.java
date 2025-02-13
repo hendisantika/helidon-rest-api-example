@@ -59,6 +59,10 @@ public class DatabaseService<M> implements CRUD<M> {
                     .getResultList();
 
         }
+    }
 
+    @Override
+    public Query<M> list() {
+        return new QueryBuilder();
     }
 }
