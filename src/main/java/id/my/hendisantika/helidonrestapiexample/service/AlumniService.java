@@ -18,6 +18,6 @@ import jakarta.enterprise.context.RequestScoped;
 public class AlumniService extends DatabaseService<Alumni> {
 
     public AlumniService() {
-        super(Alumni.class, "Alumno");
+        super(Alumni.class, "Alumni");
     }
 }

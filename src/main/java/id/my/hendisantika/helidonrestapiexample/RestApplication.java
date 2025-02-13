@@ -1,5 +1,6 @@
 package id.my.hendisantika.helidonrestapiexample;
 
+import id.my.hendisantika.helidonrestapiexample.resource.AlumniResource;
 import jakarta.ws.rs.ApplicationPath;
 import jakarta.ws.rs.core.Application;
 
@@ -25,6 +26,4 @@ public class RestApplication extends Application {
                 AlumniResource.class
         );
     }
-
-    public class RestApplication {
-    }
+}

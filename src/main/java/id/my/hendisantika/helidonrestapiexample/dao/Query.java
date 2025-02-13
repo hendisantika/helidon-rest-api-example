@@ -13,7 +13,7 @@ import java.util.List;
  * Time: 06.56
  * To change this template use File | Settings | File Templates.
  */
-public interface Query {
+public interface Query<T> {
     Query<T> page(int pag);
 
     Query<T> limit(int limit);
