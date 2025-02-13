@@ -10,6 +10,7 @@ import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
+import jakarta.ws.rs.PUT;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
@@ -71,4 +72,17 @@ public class AlumniResource {
         return Response.noContent().build();
     }
 
+    @PUT
+    @Path("/{id}")
+    @Produces("application/json")
+    @Transactional
+    public Response update(@PathParam(value = "id") Integer id, @Valid AlumniPayload payload) {
+        return this.alumniService.get(id)
+                .map(alu -> {
+                    payload.enrich(alu);
+                    this.alumniService.update(alu);
+                    return Response.ok(alu).build();
+                })
+                .orElse(Response.status(Response.Status.NOT_FOUND).build());
+    }
 }
