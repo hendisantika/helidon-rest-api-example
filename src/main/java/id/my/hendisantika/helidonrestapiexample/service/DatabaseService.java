@@ -72,4 +72,10 @@ public class DatabaseService<M> implements CRUD<M> {
         M entity = manager.find(this.targetClass, id);
         return Optional.ofNullable(entity);
     }
+
+    @Override
+    public M insert(M model) {
+        manager.persist(model);
+        return model;
+    }
 }
