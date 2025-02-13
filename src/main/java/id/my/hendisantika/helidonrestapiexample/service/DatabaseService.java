@@ -6,6 +6,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by IntelliJ IDEA.
@@ -64,5 +65,11 @@ public class DatabaseService<M> implements CRUD<M> {
     @Override
     public Query<M> list() {
         return new QueryBuilder();
+    }
+
+    @Override
+    public Optional<M> get(Object id) {
+        M entity = manager.find(this.targetClass, id);
+        return Optional.ofNullable(entity);
     }
 }
