@@ -78,4 +78,9 @@ public class DatabaseService<M> implements CRUD<M> {
         manager.persist(model);
         return model;
     }
+
+    @Override
+    public void update(M model) {
+        manager.merge(model);
+    }
 }
