@@ -10,7 +10,9 @@ import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.Response;
 
 import java.util.List;
 
@@ -49,6 +51,15 @@ public class AlumniResource {
         Alumni a = new Alumni();
         alu.enrich(a);
         return this.alumniService.insert(a);
+    }
+
+    @GET
+    @Path("/{id}")
+    @Produces("application/json")
+    public Response retrieve(@PathParam(value = "id") Integer id) {
+        return this.alumniService.get(id)
+                .map((alu) -> Response.ok(alu).build())
+                .orElse(Response.status(Response.Status.NOT_FOUND).build());
     }
 
 }
