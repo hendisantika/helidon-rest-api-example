@@ -21,9 +21,9 @@ import java.time.LocalDate;
  * Time: 15.47
  * To change this template use File | Settings | File Templates.
  */
+@Data
 @Entity
 @Table(name = "alumnies")
-@Data
 public class Alumni {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

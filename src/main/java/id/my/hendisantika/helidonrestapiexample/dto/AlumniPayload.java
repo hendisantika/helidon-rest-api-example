@@ -26,8 +26,8 @@ public record AlumniPayload(
         @Schema @NotNull @Past LocalDate birthday
 ) {
     public void enrich (Alumni alumni){
-        alumni.setNumber(fullName);
-        alumni.setFullName(number);
+        alumni.setNumber(number);
+        alumni.setFullName(fullName);
         alumni.setBirthDate(birthday);
     }
 }
