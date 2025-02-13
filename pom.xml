@@ -12,7 +12,7 @@
 
     <groupId>id.my.hendisantika</groupId>
     <artifactId>helidon-rest-api-example</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <name>helidon-rest-api-example</name>
 
     <properties>
