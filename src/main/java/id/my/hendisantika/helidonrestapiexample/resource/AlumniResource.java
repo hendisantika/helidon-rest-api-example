@@ -1,8 +1,13 @@
 package id.my.hendisantika.helidonrestapiexample.resource;
 
+import id.my.hendisantika.helidonrestapiexample.model.Alumni;
 import id.my.hendisantika.helidonrestapiexample.service.AlumniService;
 import jakarta.inject.Inject;
+import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -23,5 +28,11 @@ public class AlumniResource {
     @Inject
     public AlumniResource(AlumniService alumniService) {
         this.alumniService = alumniService;
+    }
+
+    @GET
+    @Produces("application/json")
+    public List<Alumni> list() {
+        return this.alumniService.list().page(1).get();
     }
 }
