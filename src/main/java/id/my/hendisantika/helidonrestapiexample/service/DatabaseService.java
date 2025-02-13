@@ -83,4 +83,9 @@ public class DatabaseService<M> implements CRUD<M> {
     public void update(M model) {
         manager.merge(model);
     }
+
+    @Override
+    public void delete(M model) {
+        manager.remove(model);
+    }
 }
